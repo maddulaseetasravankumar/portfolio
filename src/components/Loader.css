@@ -1,0 +1,120 @@
+/* ===== INTRO LOADER ===== */
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.16) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: loaderPulse 3s ease-in-out infinite;
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+.loader-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+  padding: 0 1.5rem;
+}
+
+.loader-name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.7rem;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 5.5vw, 2.6rem);
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+
+.loader-word-wrap {
+  overflow: hidden;
+  display: inline-block;
+  line-height: 1.15;
+}
+
+.loader-word {
+  display: inline-block;
+}
+
+.loader-name .loader-word-wrap:nth-of-type(3) .loader-word,
+.loader-name .loader-word-wrap:nth-of-type(4) .loader-word {
+  color: var(--green);
+}
+
+.loader-role {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: 2.5rem;
+}
+
+.loader-bar-wrap {
+  width: 100%;
+  max-width: 280px;
+}
+
+.loader-bar-track {
+  width: 100%;
+  height: 3px;
+  background: var(--card2);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green3), var(--green));
+  border-radius: 50px;
+}
+
+.loader-progress-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text3);
+  font-family: var(--font-body);
+}
+
+.loader-progress-num {
+  color: var(--green);
+  font-weight: 600;
+  min-width: 2.5em;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .loader-name { gap: 0.4rem 0.5rem; }
+  .loader-role { margin-bottom: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-glow { animation: none; }
+}

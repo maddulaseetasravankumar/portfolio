@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maddula-sravan-kumar.vercel.app/sitemap.xml

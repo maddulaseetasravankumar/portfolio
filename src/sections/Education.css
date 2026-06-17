@@ -1,0 +1,140 @@
+/* =========================
+   EDUCATION SECTION
+========================= */
+
+.education-accordion{
+    margin-top: 50px;
+}
+
+/* =========================
+   ACCORDION ITEM
+========================= */
+
+.education-item{
+    margin-bottom: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Soft Glow */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(0, 255, 170, 0.05);
+
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+
+.education-item:hover{
+    transform: translateY(-4px);
+
+    border-color: rgba(0, 255, 170, 0.2);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(0, 255, 170, 0.12);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.education-header{
+    padding: 22px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-color: var(--border2);
+    background: linear-gradient(135deg, var(--card), var(--card2));
+}
+
+/* Heading */
+
+.education-header h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
+/* Active Header */
+
+.education-header.active{
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   BODY
+========================= */
+
+.education-body{
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        padding 0.4s ease;
+
+    padding: 0 28px;
+}
+
+/* Show Body */
+
+.education-body.show{
+    max-height: 300px;
+    opacity: 1;
+
+    padding: 20px 28px 28px;
+}
+
+/* Paragraph */
+
+.education-body p{
+    color: rgba(255,255,255,0.75);
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+/* Percentage Text */
+
+.education-body p:last-child{
+    color: #00ffaa;
+    font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    .education-header{
+        padding: 18px 20px;
+    }
+
+    .education-header h3{
+        font-size: 17px;
+    }
+
+    .education-body.show{
+        padding: 15px 20px 22px;
+    }
+
+}

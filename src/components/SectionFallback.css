@@ -1,0 +1,16 @@
+.section-fallback {
+  width: 100%;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--bg2) 25%, var(--card2) 37%, var(--bg2) 63%);
+  background-size: 400% 100%;
+  animation: sectionShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes sectionShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-fallback { animation: none; }
+}

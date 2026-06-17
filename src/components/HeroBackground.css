@@ -1,0 +1,99 @@
+/* ===== HERO ANIMATED BACKGROUND ===== */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.32;
+  will-change: transform;
+  animation: blobFloat 18s ease-in-out infinite;
+}
+
+.hero-blob-1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+  top: -120px;
+  left: -80px;
+}
+
+.hero-blob-2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--green3) 0%, transparent 70%);
+  bottom: -100px;
+  right: 5%;
+  animation-duration: 22s;
+  animation-delay: -4s;
+}
+
+.hero-blob-3 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, var(--green2) 0%, transparent 70%);
+  top: 35%;
+  right: 25%;
+  animation-duration: 20s;
+  animation-delay: -8s;
+  opacity: 0.2;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-25px, 25px) scale(0.95); }
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: var(--green);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: particleRise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes particleRise {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.55; }
+  85% { opacity: 0.2; }
+  100% { transform: translateY(-520px) translateX(12px); opacity: 0; }
+}
+
+.hero-mouse-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(46, 204, 113, 0.14),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-blob { filter: blur(40px); }
+  .hero-blob-1, .hero-blob-2 { width: 220px; height: 220px; }
+  .hero-blob-3 { display: none; }
+  .hero-mouse-glow { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob, .hero-particle { animation: none; }
+}

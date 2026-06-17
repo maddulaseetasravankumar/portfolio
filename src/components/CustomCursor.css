@@ -1,0 +1,55 @@
+/* ===== CUSTOM CURSOR ===== */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  background: var(--green);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1.5px solid var(--border2);
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease,
+    border-color 0.25s ease, background 0.25s ease;
+}
+
+.cursor-ring.cursor-hover {
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  background: var(--green-glow2);
+  border-color: var(--green);
+}
+
+/* Hide the native cursor only while the custom one is active, but keep
+   a text caret available for actual text inputs. */
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button {
+  cursor: none;
+}
+
+body.custom-cursor-active input,
+body.custom-cursor-active textarea {
+  cursor: text;
+}
+
+@media (max-width: 900px), (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}

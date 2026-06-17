@@ -1,0 +1,38 @@
+/* ===== LOGOS STRIP ===== */
+.logos-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+  background: var(--bg2);
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-track {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  animation: scroll-logos 22s linear infinite;
+  width: max-content;
+}
+
+.logo-item {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text3);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+  cursor: default;
+}
+
+.logo-item svg {
+  font-size: 1.1rem;
+}
+
+.logo-item:hover {
+  color: var(--text2);
+}
